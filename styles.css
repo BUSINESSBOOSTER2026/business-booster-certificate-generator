@@ -36,7 +36,7 @@ small{display:block;margin-top:7px;color:var(--mute);font-size:13px;line-height:
 /* ---- certificate (fixed 1600 x 1131 coordinate space) ---- */
 .cert{position:relative;width:1600px;height:1131px;background:url("assets/certificate-background.png") center/100% 100% no-repeat;color:#4a4f5c;overflow:hidden}
 .f{position:absolute;white-space:nowrap}
-.name{left:387px;width:833px;top:432px;height:92px;display:flex;align-items:flex-end;justify-content:center;font:700 62px/1.1 "Playfair Display",serif;color:#4a4f5c;padding-bottom:6px}
+.name{left:387px;width:833px;top:432px;height:92px;display:flex;align-items:flex-end;justify-content:center;font:italic 700 62px/1.1 "Playfair Display",serif;color:#4a4f5c;padding-bottom:6px}
 .desc{left:378px;width:846px;top:553px;height:100px;white-space:normal;text-align:center;font:italic 400 26px/32px Lora,Georgia,serif}
 .desc p{margin:0}
 .desc strong{font-weight:600}
