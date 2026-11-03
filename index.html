@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Business Booster | Certificate Generator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <div><h1>Business Booster</h1><p>Certificate Generator</p></div>
+  </div>
+  <span class="status" id="status"><i></i><span id="statusText">Ready to create</span></span>
+</header>
+
+<main class="layout">
+  <section class="panel form-panel">
+    <p class="kicker">Certificate details</p>
+    <h2>Create a certificate</h2>
+    <p class="lead">Enter the intern's details. The certificate design stays the same.</p>
+
+    <label for="name">Student name</label>
+    <input id="name" type="text" placeholder="e.g. Onkit Nandi" autocomplete="off">
+
+    <label for="certNo">Certificate number</label>
+    <input id="certNo" type="text" placeholder="e.g. BB/2026/01" autocomplete="off">
+
+    <label for="issueDate">Date of issue</label>
+    <input id="issueDate" type="date">
+    <small>Choose the issue date from the calendar.</small>
+
+    <label for="duration">Duration</label>
+    <input id="duration" type="text" placeholder="e.g. 3 Months" autocomplete="off">
+
+    <label for="period">Internship period <span class="opt">(optional)</span></label>
+    <input id="period" type="text" placeholder="e.g. 10/08/2026 to 10/11/2026" autocomplete="off">
+
+    <label for="desc">Certificate description</label>
+    <textarea id="desc" rows="5"></textarea>
+    <small>Wrap words in **double asterisks** to make them bold.</small>
+
+    <label for="qr">QR code <span class="opt">(image)</span></label>
+    <input id="qr" type="file" accept="image/*">
+
+    <label for="sig1">Signature 1 <span class="opt">(left)</span></label>
+    <input id="sig1" type="file" accept="image/*">
+
+    <label for="sig2">Signature 2 <span class="opt">(right)</span></label>
+    <input id="sig2" type="file" accept="image/*">
+    <small>A transparent PNG gives the best result; white backgrounds are removed automatically from signatures.</small>
+
+    <button id="download" class="primary" type="button">Download PDF</button>
+    <p class="note" id="note" role="status"></p>
+  </section>
+
+  <section class="panel preview-panel">
+    <div class="preview-head">
+      <div><p class="kicker">Live preview</p><h2>Certificate preview</h2></div>
+      <span class="chip">Original design · 1600 × 1131</span>
+    </div>
+    <div class="stage" id="stage">
+      <div class="scaler" id="scaler">
+        <div class="cert" id="cert">
+          <div class="f name" id="pName"><span></span></div>
+          <div class="f desc" id="pDesc"><p></p></div>
+          <div class="f duration" id="pDuration"></div>
+          <div class="f period" id="pPeriod"></div>
+          <div class="f issue" id="pIssue"></div>
+          <div class="f certno" id="pCertNo"></div>
+          <div class="img qr" id="pQr"></div>
+          <div class="img sig1" id="pSig1"></div>
+          <div class="img sig2" id="pSig2"></div>
+        </div>
+      </div>
+    </div>
+    <p class="foot">The PDF is generated from the same artwork and layout shown above.</p>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
